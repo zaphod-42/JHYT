@@ -100,18 +100,19 @@
                 client.search();
             });
         }else{
-            var radius = '';
-            if(this.Location!=''){
-                radius = $('#radius').val()+$('#radius_unit').val()
-            }
-            gapi.client.youtube.search.list({
+            var radius='';
+            var search = {
                 q: $('#search_box').val(),
                 type: 'video',
                 part: 'snippet',
                 order: $('#search_order').val(),
-                location: this.Location,
-                locationRadius: radius,
-            }).execute(function(response) {
+            }
+            if(this.Location!=''){
+                search.location = this.Location;
+                search.locationRaduis = $('#radius').val()+$('#radius_unit').val();
+            }
+            gapi.client.youtube.search.list(search)
+              .execute(function(response) {
                 $('#search-container').html('');
                 for(var i in response.result.items){
                     var videoID = response.result.items[i].id.videoId;
@@ -157,7 +158,7 @@
         gapi.client.youtube.playlists.list({
             part: 'snippet',
             mine: true,
-            maxResults: 50,
+            maxResults: 50
         }).execute(function(response){
             for(var i in response.result.items){
                 var list = response.result.items[i];
