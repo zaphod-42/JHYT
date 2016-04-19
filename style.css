@@ -1,0 +1,21 @@
+.not-logged-in #header a, .not-logged-in #sidebar{
+    display:none;
+}
+.logged-in #header #login{
+    display:none;
+}
+#sidebar{
+    float:left;
+    max-width:29%
+}
+#content{
+    float:right;
+    max-width:69%;
+    display:none;
+}
+#sidebar #favorites{
+    display:none;
+}
+#comments .comment{
+    padding:20px;
+}
