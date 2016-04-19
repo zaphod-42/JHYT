@@ -100,7 +100,6 @@
                 client.search();
             });
         }else{
-            var radius='';
             var search = {
                 q: $('#search_box').val(),
                 type: 'video',
