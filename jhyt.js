@@ -100,14 +100,17 @@
                 client.search();
             });
         }else{
-            
+            var radius = '';
+            if(this.Location!=''){
+                radius = $('#radius').val()+$('#radius_unit').val()
+            }
             gapi.client.youtube.search.list({
                 q: $('#search_box').val(),
                 type: 'video',
                 part: 'snippet',
                 order: $('#search_order').val(),
                 location: this.Location,
-                locationRadius: $('#radius').val()+$('#radius_unit').val(),
+                locationRadius: radius,
             }).execute(function(response) {
                 $('#search-container').html('');
                 for(var i in response.result.items){
