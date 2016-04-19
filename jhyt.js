@@ -108,7 +108,7 @@
             }
             if(this.Location!=''){
                 search.location = this.Location;
-                search.locationRaduis = $('#radius').val()+$('#radius_unit').val();
+                search.locationRadius = $('#radius').val()+$('#radius_unit').val();
             }
             gapi.client.youtube.search.list(search)
               .execute(function(response) {
