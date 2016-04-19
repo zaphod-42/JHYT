@@ -153,7 +153,8 @@
     JHYT.prototype.getPlaylists = function(){
         gapi.client.youtube.playlists.list({
             part: 'snippet',
-            mine: true 
+            mine: true,
+            maxResults: 50,
         }).execute(function(response){
             for(var i in response.result.items){
                 var list = response.result.items[i];
