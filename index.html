@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+        <script src="jhyt.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="not-logged-in">
+        <div id="header">
+            <a href="#favorites" class="favorites-link">Favorites</a>
+            <a href="#search" class="search-link">Search</a>
+            <button id="login">Login</a>
+        </div>
+        <div id="sidebar">
+            <div id="favorites">
+                
+            </div>
+            <div id="search">
+                <input id="search_box" />
+                <br>
+                <label for="search_order">Sort By: </label><select id="search_order">
+                    <option value="relevance">Relevance</option>
+                    <option value="date">Date</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <br>
+                <label for="location">Location: </label><input id="location" value="4674 W oneida springfield mo"/> within <input type="numeric" value="100" id="radius" />
+                <select id="radius_unit">
+                    <option value="ft">Feet</option>
+                    <option value="m">Meters</option>
+                    <option value="mi" selected>Miles</option>
+                    <option value="km">Kilometers</option>
+                </select> 
+                <br>
+                <button id="search">Search</button>
+                <div id="search-container"></div>
+            </div>
+        </div>
+        <div id="content">
+            <h3 id="title"></h3>
+            <div id="player"></div>
+            <div id="description"><p class="text"></p></div>
+            <div id="channel">Channel: <span class="text"></span></div>
+            <div id="meta"><span id="likes">Likes: <span class="text"></span></span>  -  <span id="dislikes">Dislikes: <span class="text"></span></span></div>
+            <button id="favorite-this">Add to Favorites</button>
+            <h4>Comments:</h4>
+            <div id="comments"></div>
+        </div>
+    </body>
+</html>
