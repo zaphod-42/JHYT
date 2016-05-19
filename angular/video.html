@@ -1,0 +1,18 @@
+<div ng-show="playing.loaded">
+    <h3>{{playing.snippet.title}}</h3>
+    <div id="mainplayer"></div>
+    <div id="description"><p class="text">{{playing.snippet.description}}</p></div>
+    <div id="channel">Channel: <span class="text">{{playing.snippet.channelTitle}}</span></div>
+    <div id="meta"><span id="likes">Likes: <span class="text">{{playing.statistics.likeCount}}</span></span>  -  <span id="dislikes">Dislikes: <span class="text">{{playing.statistics.dislikeCount}}</span></span></div>
+    <!-- still need to implement favorite -->
+    <!-- <button id="favorite-this">Add to Favorites</button> -->
+    <div class="comment-wrapper" ng-show="playing.comments.length">
+        <h4>Comments:</h4>
+        <div ng-repeat="comment in playing.comments" class="comment">
+            <div class="comment-meta">{{comment.authorDisplayName}} - {{comment.publishedAt | date:'medium'}}</div>
+            <div class="comment-text">
+                {{comment.textDisplay}}
+            </div>
+        </div>
+    </div>
+</div>
