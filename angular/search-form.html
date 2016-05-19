@@ -1,0 +1,28 @@
+<div>
+    <form name="ytSearch" ng-submit="YTCtrl.submit()" novalidate>
+        <label for="search_box">Search For: </label>
+        <input id="search_box" ng-model="YTCtrl.searchString"/>
+        <br>
+        <label for="location">Location: </label>
+        <input id="location" ng-model="YTCtrl.location"/>
+        within
+        <input type="numeric" value="100" ng-model="YTCtrl.locationRadius" />
+        <select ng-model="YTCtrl.locationUnit">
+            <option value="ft">Feet</option>
+            <option value="m">Meters</option>
+            <option value="mi">Miles</option>
+            <option value="km">Kilometers</option>
+        </select>
+        <br>
+        <label for="search_order">Sort By: </label>
+        <select id="search_order" ng-model="YTCtrl.order">
+            <option value="relevance">Relevance</option>
+            <option value="date">Date</option>
+            <option value="rating">Rating</option>
+        </select>
+        <br>
+        <button id="search">
+            Search
+        </button>
+    </form>
+</div>
