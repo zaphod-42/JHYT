@@ -1,0 +1,12 @@
+<div>
+    <ul>
+        <li ng-repeat="tab in tabset.tabs" ng-class="{active:tabset.current()==$index}">
+            <a href ng-click="tabset.current($index)">{{tab}}</a>
+        </li>
+    </ul>
+    <div>
+        <div ng-repeat="pane in tabset.panes" ng-show="tabset.current()==$index">
+            <div compile="{{pane.contents}}"></div>
+        </div>
+    </div>
+</div>
