@@ -1,0 +1,9 @@
+<div>
+    <div ng-repeat="result in results">
+        <div ng-click="watchVideo(result)">
+            <h4>{{result.snippet.title}}</h4>
+            <br>
+            <img ng-src="{{result.snippet.thumbnails.default.url}}" style="width:200px;">
+        </div>
+    </div>
+</div>
