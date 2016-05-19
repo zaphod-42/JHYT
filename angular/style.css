@@ -1,0 +1,22 @@
+sidebar-tabset{
+    float:left;
+    max-width: 30%;
+    border-right: 1px solid #ccc;
+    min-height:100%;
+}
+video-player{
+    float:right;
+    width:65%;
+}
+video-player>div{
+    max-width:640px;
+    margin: 0 auto;
+}
+
+.comment{
+    padding:30px;
+}
+.comment-meta{
+    background: #eee;
+    margin-bottom: 10px;
+}
